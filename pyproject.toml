@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "catch_the_train"
+version = "0.1.0"
+description = ""
+authors = ["Mark Ruvald Pedersen <mped@oticon.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pyhafas = { git = "https://github.com/eisbaw/pyhafas.git", rev = "b9b76bea8c9b886499b86c5fd189f86a526f3ab1" }
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[tool.poetry.scripts]
+catch-the-train = 'catch_the_train:main'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
