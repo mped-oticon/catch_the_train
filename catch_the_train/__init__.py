@@ -16,6 +16,8 @@ def print_departures(deps):
             continue
         if "Frederikssund" in d.direction:
             continue  # We want towards Copenhagen
+        if "Bus" in d.name:
+            continue  # We want trains, not busses
         t_dep = d.dateTime + datetime.timedelta(seconds = d.delay.total_seconds() if d.delay else 0)
         print(t_dep.strftime('%H:%M'), d.name, d.station.name, "towards", d.direction) 
 
