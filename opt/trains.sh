@@ -2,6 +2,6 @@
 export PATH="$PATH:$HOME/.nix-profile/bin"
 
 {
-  nix-shell ~/topics/catch_the_train/shell.nix --pure --run "python3 catch_the_train/__init__.py"
+  nix-shell shell.nix --pure --run "python3 catch_the_train/__init__.py"
 } | awk 'NR>=2{print $1, $3}'
 
