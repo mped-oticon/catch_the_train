@@ -20,6 +20,14 @@ This way, we can have our cake and eat it too:
 
 # Quick-start
 
+On Nix:
+```
+git clone https://github.com/mped-oticon/catch_the_train
+cd catch_the_train
+nix-shell --pure --run 'python3 catch_the_train/__init__.py'
+```
+
+On NixOS:
 ```
 nix-shell --pure https://github.com/mped-oticon/catch_the_train/archive/refs/heads/master.tar.gz --run '$out/bin/catch-the-train'
 ```
