@@ -16,9 +16,8 @@ def print_departures(deps):
             continue
         if "Frederikssund" in d.direction:
             continue  # We want towards Copenhagen
-        t_dep = d.dateTime + datetime.timedelta(minutes = d.delay or 0)
+        t_dep = d.dateTime + datetime.timedelta(seconds = d.delay.total_seconds() if d.delay else 0)
         print(t_dep.strftime('%H:%M'), d.name, d.station.name, "towards", d.direction) 
-
 
 def main():
     client = HafasClient(RKRPProfile(), debug=True)
