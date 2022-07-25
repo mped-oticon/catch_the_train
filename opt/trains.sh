@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+cd "$(dirname $(readlink -f ${BASH_SOURCE[0]}))/.."
 export PATH="$PATH:$HOME/.nix-profile/bin"
 
 {
