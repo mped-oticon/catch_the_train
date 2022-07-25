@@ -22,16 +22,13 @@ pkgs.mkShell {
   (if builtins.pathExists ./poetry.lock then [ allthepoetrystuff ]
   else []);
 
-  dir_of_this_nix_file = ./.;
 
   shellHook =
     if builtins.pathExists ./poetry.lock then ''
-      cd $dir_of_this_nix_file
       #echo "Yay poetry.lock exists. I'll honor it"
       #echo "You have a perfectly usable environment now :)"
     ''
     else ''
-      cd $dir_of_this_nix_file
       echo "Boo! You don't have a lock file - so I'll make it now"
       poetry lock || exit 1
       echo "Lockfile created. But this nix-shell is unusable; start it again. Exiting for now."
